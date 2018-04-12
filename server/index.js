@@ -8,8 +8,9 @@ let port = 3001;
 app.listen(port, () => console.log(`App live on http://localhost:${port}`));
 
 app.use(express.static('public'))
-app.get('/listings', (req, res) => {
-  Listing.find({}).exec((err, results) => {
+app.get('/listings/:id', ({params: {id}}, res) => {
+
+  Listing.find({"id": id}).exec((err, results) => {
     if (err) {
       throw err;
     }
