@@ -5,6 +5,6 @@ const ListingEntry = (props) => {
     <div>
     Listing entry here
     </div>
-  )
-}
+  );
+};
 export default ListingEntry;
