@@ -11,7 +11,7 @@ app.use(express.static('public'));
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
 app.get('/listings/:id', ({ params: { id } }, res) => {
-  Listing.find({ id }).exec((err, results) => {
+  Listing.find({ id: { $ne: id } }).exec((err, results) => {
     if (err) {
       throw err;
     }

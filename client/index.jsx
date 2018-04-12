@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom';
 
 class Listings extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      listings: [],
+    }
   }
 
   render() {
