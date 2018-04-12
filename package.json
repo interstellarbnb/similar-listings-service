@@ -1,0 +1,38 @@
+{
+  "name": "similar-listings-service",
+  "description": "> Project description",
+  "author": "Evelyn Chan",
+  "license": "ISC",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "scripts": {},
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "jest": "^22.4.3",
+    "mongoose": "^5.0.14",
+    "nodemon": "^1.17.3",
+    "react": "^16.3.1",
+    "react-dev": "0.0.1"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "faker": "^4.1.0",
+    "webpack": "^4.5.0",
+    "webpack-dev": "^1.1.0"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interstellarbnb/similar-listings-service.git"
+  },
+  "bugs": {
+    "url": "https://github.com/interstellarbnb/similar-listings-service/issues"
+  },
+  "homepage": "https://github.com/interstellarbnb/similar-listings-service#readme"
+}
