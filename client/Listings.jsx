@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Carousel } from 'react-bootstrap';
 import style from './listingstyle.css';
 import ListingEntry from './ListingEntry';
 
@@ -9,7 +10,10 @@ class Listings extends Component {
     this.state = {
       listings: [],
       listingId: Math.floor(Math.random() * 101),
+      index: 0,
+      direction: null,
     };
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
   componentDidMount() {
@@ -26,14 +30,28 @@ class Listings extends Component {
     });
   }
 
-
+  handleSelect(selectedIndex, e) {
+    // alert(`selected=${selectedIndex}, direction=${e.direction}`);
+    this.setState({
+      index: selectedIndex,
+      direction: e.direction
+    });
+  }
   render() {
     return (
       <div className={style.container}>
-        {this.state.listings.map(listing => (
-          <ListingEntry listing={listing} key={listing.id} class={listing.id} />
+        <Carousel
+          activeIndex={this.state.index}
+          direction={this.state.direction}
+          onSelect={this.handleSelect}
+        >
+          {this.state.listings.map(listing => (
+            <Carousel.Item key={listing.id}>
+              <ListingEntry listing={listing} key={listing.id} class={listing.id} />
+            </Carousel.Item>
         ))
       }
+        </Carousel>
       </div>
     );
   }
