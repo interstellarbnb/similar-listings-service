@@ -1,23 +1,43 @@
-var path = require('path');
-var SRC_DIR = path.join(__dirname, '/client');
-var DIST_DIR = path.join(__dirname, '/public');
+const webpack = require('webpack');
 
 module.exports = {
-  entry: `${SRC_DIR}/index.jsx`,
-  output: {
-    filename: 'main.js',
-    path: DIST_DIR
-  },
+  entry: [
+    './client/index.jsx',
+  ],
   module: {
     rules: [
       {
-        test: /\.jsx?/,
-        include: SRC_DIR,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'env']
-        }
-      }
-    ]
-  }
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: true,
+              localIdentName: '[local]___[hash:base64:5]',
+            },
+          },
+        ],
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
+  },
+  output: {
+    path: `${__dirname}/public`,
+    publicPath: '/',
+    filename: 'main.js',
+  },
+  devServer: {
+    contentBase: './public',
+  },
 };

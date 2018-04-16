@@ -8,6 +8,13 @@ const getListingType = () => {
   return types[randomIndex];
 };
 
+const generateImage = () => {
+  let query = ['crater', 'stars', 'galaxy', 'tree-house', 'satellite'];
+  let randomIndex = Math.floor(Math.random() * query.length);
+
+  return query[randomIndex];
+};
+
 const generateRatings = () => {
   let ratings = [];
   let ratingsCount = Math.floor(Math.random() * 50);
@@ -20,9 +27,9 @@ const generateRatings = () => {
 for (let i = 1; i < 101; i += 1) {
   let listingData = {
     id: i,
-    title: faker.company.catchPhrase(),
+    title: `${faker.commerce.productAdjective()} ${getListingType()}`,
     price: Math.floor(Math.random() * 1000),
-    coverPhoto: 'https://source.unsplash.com/800x450/?space',
+    imageUrl: `https://source.unsplash.com/333x222/?${generateImage()}`,
     reviews: generateRatings(),
     type: getListingType(),
     bedCount: Math.floor(Math.random() * 10),
