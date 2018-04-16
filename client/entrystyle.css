@@ -56,29 +56,3 @@
   color: #484848 !important;
   display: inline !important;
 }
-
-.star {
-  height: 1em;
-  width: 1em;
-  display: block;
-  fill: currentcolor;
-
-  display: inline-block !important;
-  color: #008489 !important;
-  font-size: 9px !important;
-  height: 10px !important;
-  margin-right: 1px !important;
-  width: 9px !important;
-
-  vertical-align: middle !important;
-  line-height: 21px !important;
-  margin-right: 2px !important;
-
-  line-height: normal !important;
-  max-height: 24px !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 1 !important;
-  -webkit-box-orient: vertical !important;
-}

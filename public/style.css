@@ -1,5 +1,5 @@
 body {
-    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
     font-size: 14px;
     line-height: 1.43;
     color: #484848;
