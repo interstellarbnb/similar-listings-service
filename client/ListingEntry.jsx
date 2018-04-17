@@ -23,7 +23,7 @@ class ListingEntry extends Component {
 
   render() {
     return (
-      <div className={style.item}>
+      <div>
         <img src={this.props.listing.imageUrl} alt="" />
         <p className={style.type}>Entire {this.props.listing.type}, {this.props.listing.bedCount} Beds</p>
         <p className={style.title}>{this.props.listing.title}</p>

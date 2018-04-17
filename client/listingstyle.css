@@ -1,5 +1,5 @@
 .container {
     display: flex;
-    height: 200px;
+    height: 350px;
     align-content: space-around;
 }
