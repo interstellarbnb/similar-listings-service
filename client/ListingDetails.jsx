@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import propTypes from 'prop-types';
+import { shape, number, string, array, bool, func } from 'prop-types';
 import Modal from 'react-modal';
 import ReactStars from 'react-stars';
 import style from './listingdetails.css';
@@ -104,19 +104,19 @@ class ListingDetails extends Component {
 }
 
 ListingDetails.propTypes = {
-  listing: propTypes.shape({
-    id: propTypes.number.isRequired,
-    title: propTypes.string.isRequired,
-    imageUrl: propTypes.string.isRequired,
-    reviews: propTypes.array.isRequired,
-    avgRating: propTypes.number.isRequired,
-    type: propTypes.string.isRequired,
-    city: propTypes.string.isRequired,
-    state: propTypes.string.isRequired,
-    country: propTypes.string.isRequired,
+  listing: shape({
+    id: number.isRequired,
+    title: string.isRequired,
+    imageUrl: string.isRequired,
+    reviews: array.isRequired,
+    avgRating: number.isRequired,
+    type: string.isRequired,
+    city: string.isRequired,
+    state: string.isRequired,
+    country: string.isRequired,
   }).isRequired,
-  isModalOpen: propTypes.bool.isRequired,
-  closeModal: propTypes.func.isRequired,
+  isModalOpen: bool.isRequired,
+  closeModal: func.isRequired,
 };
 
 export default ListingDetails;

@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import { shape, number, string, array, func } from 'prop-types';
 import ReactStars from 'react-stars';
 import style from './entrystyle.css';
 
@@ -49,17 +49,17 @@ const ListingEntry = ({ listing, openModal }) => (
 );
 
 ListingEntry.propTypes = {
-  listing: propTypes.shape({
-    id: propTypes.number.isRequired,
-    title: propTypes.string.isRequired,
-    price: propTypes.number.isRequired,
-    imageUrl: propTypes.string.isRequired,
-    reviews: propTypes.array.isRequired,
-    avgRating: propTypes.number.isRequired,
-    type: propTypes.string.isRequired,
-    bedCount: propTypes.number.isRequired,
+  listing: shape({
+    id: number.isRequired,
+    title: string.isRequired,
+    price: number.isRequired,
+    imageUrl: string.isRequired,
+    reviews: array.isRequired,
+    avgRating: number.isRequired,
+    type: string.isRequired,
+    bedCount: number.isRequired,
   }).isRequired,
-  openModal: propTypes.func.isRequired,
+  openModal: func.isRequired,
 };
 
 export default ListingEntry;
