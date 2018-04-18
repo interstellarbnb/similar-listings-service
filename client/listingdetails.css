@@ -14,18 +14,15 @@
 }
 
 .list {
-    height: 400px;
     margin-top: 16px;
     margin-bottom: 16px;
-    word-wrap: break-word !important;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-    font-size: 19px !important;
-    line-height: 24px !important;
-    letter-spacing: undefined !important;
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-    color: #484848 !important;
-    font-weight: 300 !important;
+    word-wrap: break-word;
+    font-size: 19px;
+    height: 400px;
+    line-height: 24px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-weight: 300;
   }
 
   .listitem {
@@ -33,46 +30,39 @@
   }
 
   .line {
-    border-bottom: 1px solid #DBDBDB !important;
+    border-bottom: 1px solid #DBDBDB;
     margin: 20px;
   }
 
 .title {
-    font-weight: normal !important;
-    margin: 0px !important;
-    word-wrap: break-word !important;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-    font-size: 19px !important;
-    line-height: 24px !important;
-    letter-spacing: undefined !important;
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-    color: #484848 !important;
+    font-weight: normal;
+    margin: 0px;
+    word-wrap: break-word;
+    font-size: 19px;
+    line-height: 24px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .location {
-    margin: 0px !important;
-    word-wrap: break-word !important;
-    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-    font-size: 15px !important;
-    line-height: 18px !important;
-    letter-spacing: 0.2px !important;
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-    color: #484848 !important;
-    font-weight: 300 !important;
+    margin: 0px;
+    word-wrap: break-word;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-weight: 300;
 }
 
 .review {
-  font-weight: normal !important;
-  margin: 0px !important;
-  word-wrap: break-word !important;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-  font-size: 15px !important;
-  line-height: 18px !important;
-  letter-spacing: 0.2px !important;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-  color: #484848 !important;
-  display: inline !important;
+  font-weight: normal;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  display: inline;
 }
