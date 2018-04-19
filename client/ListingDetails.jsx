@@ -17,7 +17,15 @@ class ListingDetails extends Component {
     const {
       isModalOpen,
       closeModal,
-      listing,
+      listing: {
+        imageUrl,
+        title,
+        city,
+        state,
+        country,
+        reviews,
+        avgRating,
+      },
     } = this.props;
 
     const customStyles = {
@@ -73,26 +81,26 @@ class ListingDetails extends Component {
           </div>
           <div className={style.container}>
             <div className={style.item}>
-              <img src={listing.imageUrl} width="104" height="80" alt="" />
+              <img src={imageUrl} width="104" height="80" alt="" />
             </div>
             <div className={style.item}>
               <div className={style.title}>
-                {listing.title}
+                {title}
               </div>
               <div className={style.location}>
-                {listing.city}, {listing.state}, {listing.country}
+                {city}, {state}, {country}
               </div>
               <div className={style.review}>
                 <ReactStars
                   count={5}
                   size={18}
-                  value={listing.avgRating}
+                  value={avgRating}
                   color1="A0A0A0"
                   color2="#008489"
                   edit={false}
                 />
                 <span className={style.review}>
-                  {listing.reviews.length} Reviews
+                  {reviews.length} Reviews
                 </span>
               </div>
             </div>
