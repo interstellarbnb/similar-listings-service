@@ -7,9 +7,6 @@ import style from './listingdetails.css';
 class ListingDetails extends Component {
   constructor(props) {
     super(props);
-  }
-
-  componentWillMount() {
     Modal.setAppElement('#modal');
   }
 
