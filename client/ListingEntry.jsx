@@ -27,7 +27,7 @@ const ListingEntry = ({ listing, openModal }) => (
       </svg>
     </div>
     <img src={listing.imageUrl} alt="" />
-    <p className={style.type}>Entire {listing.type}, {listing.bedCount} Beds</p>
+    <p className={style.type}>Entire {listing.type}, {listing.bedCount} {listing.bedCount === 1 ? 'Bed' : 'Beds'}</p>
     <p className={style.title}>{listing.title}</p>
     <p className={style.small}>${listing.price} per night</p>
     <div>
