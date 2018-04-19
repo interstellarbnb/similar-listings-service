@@ -10,12 +10,51 @@ app.listen(port, () => console.log(`App live on http://localhost:${port}`));
 app.use(express.static('public'));
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
-app.get('/listings/:id', ({ params: { id } }, res) => {
-  Listing.findRandom({ id: { $ne: id } }).limit(12).exec((err, results) => {
-    if (err) {
-      throw err;
+
+app.get('/listings/:id', ({ params: { id } }, response) => {
+  Listing.findRandom({ id: { $ne: id } }).limit(12).exec((error, results) => {
+    if (error) {
+      response.status(404).end('Record not found');
+    } else {
+      response.status(200).send(results);
     }
-    res.writeHead(201, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(results));
+  });
+});
+
+app.post('/listings', ({
+  body: {
+    id,
+    title,
+    price,
+    imageUrl,
+    reviews,
+    avgRating,
+    type,
+    bedCount,
+    city,
+    state,
+    country,
+  },
+}, response) => {
+  const listingData = {
+    id,
+    title,
+    price,
+    imageUrl,
+    reviews,
+    avgRating,
+    type,
+    bedCount,
+    city,
+    state,
+    country,
+  };
+  const listing = new Listing(listingData);
+  listing.save((error) => {
+    if (error) {
+      response.status(404).end('Post unsuccessful!');
+    } else {
+      response.status(201).send('Post successful!');
+    }
   });
 });

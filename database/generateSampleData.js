@@ -27,8 +27,8 @@ const generateRatings = () => {
 
 for (let i = 1; i < 101; i += 1) {
   const reviews = generateRatings();
-  const avgRating = Math.round(reviews.reduce(
-    (accumulator, current) => accumulator + current, 0) / reviews.length);
+  const avgRating = Math.round(reviews.reduce((accumulator, current) => accumulator + current, 0)
+  / reviews.length);
 
   const listingData = {
     id: i,
@@ -38,7 +38,7 @@ for (let i = 1; i < 101; i += 1) {
     reviews,
     avgRating,
     type: getListingType(),
-    bedCount: Math.floor(Math.random() * 10),
+    bedCount: Math.floor(Math.random() * 6) + 1,
     city: faker.address.city(),
     state: faker.address.stateAbbr(),
     country: faker.address.country(),
