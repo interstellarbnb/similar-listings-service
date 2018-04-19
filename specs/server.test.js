@@ -1,4 +1,5 @@
 const request = require('request');
+const { Listing } = require('../database/db.js');
 
 const url = 'http://127.0.0.1:3001';
 
@@ -13,17 +14,45 @@ describe('Server', () => {
     done();
   });
 
-  test('GET request should not contain listing id', (done) => {
+  test('GET request body should not contain listing id', (done) => {
     request({
       url: `${url}/listings/1`,
       method: 'GET',
     }, (error, response, body) => {
-      const bodyjson = JSON.parse(body);
-      for (let i = 0; i < bodyjson.length; i += 1) {
-        expect(bodyjson[i].id).not.toBe(1);
+      const results = JSON.parse(body);
+      for (let i = 0; i < results.length; i += 1) {
+        expect(results[i].id).not.toBe(1);
       }
     });
     done();
   });
 
+  test('Successful POST request should return 201', (done) => {
+    Listing.find({ id: 101 }).remove().exec();
+    const postData = {
+      id: 101,
+      title: 'test',
+      price: 200,
+      imageUrl: 'test',
+      reviews: [4, 5, 6],
+      avgRating: 5,
+      type: 'Space Shuttle',
+      bedCount: 3,
+      city: 'San Francisco',
+      state: 'CA',
+      country: 'US',
+    };
+    request({
+      url: `${url}/listings`,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(postData),
+    }, (error, response) => {
+      if (error) {
+        console.error('error message', error);
+      }
+      expect(response.statusCode).toBe(201);
+    });
+    done();
+  });
 });
