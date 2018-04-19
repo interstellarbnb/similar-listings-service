@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ListingEntry /> Should render component 1`] = `
+<div>
+  <div
+    className="heart"
+  >
+    <svg
+      aria-label="Add listing to a list"
+      fill="#484848"
+      fillOpacity="0.5"
+      onClick={[Function]}
+      role="img"
+      stroke="#ffffff"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2.5"
+      style={
+        Object {
+          "display": "block",
+          "height": "24px",
+          "width": "24px",
+        }
+      }
+      viewBox="0 0 32 32"
+    >
+      <path
+        d="m23.99 2.75c-.3 0-.6.02-.9.05-1.14.13-2.29.51-3.41 1.14-1.23.68-2.41 1.62-3.69 2.94-1.28-1.32-2.46-2.25-3.69-2.94-1.12-.62-2.27-1-3.41-1.14a7.96 7.96 0 0 0 -.9-.05c-1.88 0-7.26 1.54-7.26 8.38 0 7.86 12.24 16.33 14.69 17.95a1 1 0 0 0 1.11 0c2.45-1.62 14.69-10.09 14.69-17.95 0-6.84-5.37-8.38-7.26-8.38"
+      />
+    </svg>
+  </div>
+  <img
+    alt=""
+    src="https://source.unsplash.com/333x222/?crater"
+  />
+  <p
+    className="type"
+  >
+    Entire 
+    Alpha Base
+    , 
+    1
+     
+    Bed
+  </p>
+  <p
+    className="title"
+  >
+    Refined Black Hole
+  </p>
+  <p
+    className="small"
+  >
+    $
+    662
+     per night
+  </p>
+  <div>
+    <span>
+      <ReactStars
+        char="★"
+        color1="A0A0A0"
+        color2="#008489"
+        count={5}
+        edit={false}
+        half={true}
+        onChange={[Function]}
+        size={13}
+        value={3}
+      />
+    </span>
+    <span
+      className="review"
+    >
+      3
+    </span>
+  </div>
+</div>
+`;
