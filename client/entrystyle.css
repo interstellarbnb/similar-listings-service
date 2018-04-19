@@ -3,56 +3,54 @@
 }
 
 .title {
-  margin: 0px !important;
-  word-wrap: break-word !important;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-  font-size: 19px !important;
-  line-height: 22px !important;
-  letter-spacing: undefined !important;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-  color: #484848 !important;
-  font-weight: 700 !important;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 19px;
+  line-height: 22px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-weight: 700;
 }
 
 .type {
-  margin: 0px !important;
-  word-wrap: break-word !important;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-  font-size: 12px !important;
-  line-height: 16px !important;
-  letter-spacing: 0.2px !important;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-  color: #484848 !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .small {
-  margin: 0px !important;
-  word-wrap: break-word !important;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-  font-size: 15px !important;
-  line-height: 18px !important;
-  letter-spacing: 0.2px !important;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-  color: #484848 !important;
-  font-weight: 300 !important;
-  display: inline !important;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-weight: 300;
+  display: inline;
 }
 
 .review {
-  font-weight: normal !important;
-  margin: 0px !important;
-  word-wrap: break-word !important;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-  font-size: 12px !important;
-  line-height: 16px !important;
-  letter-spacing: 0.2px !important;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-  color: #484848 !important;
-  display: inline !important;
+  font-weight: normal;
+  margin: 0px;
+  word-wrap: break-word;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  display: inline;
+}
+
+.heart {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  z-index: 2;
 }

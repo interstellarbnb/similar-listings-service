@@ -9,6 +9,7 @@ const listingSchema = mongoose.Schema({
   price: Number,
   imageUrl: String,
   reviews: Array,
+  avgRating: Number,
   type: String,
   bedCount: Number,
   city: String,
