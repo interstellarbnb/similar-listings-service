@@ -1,6 +1,6 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
-import style from './entrystyle.css';
+import { shallow, mount } from 'enzyme';
+import style from '../client/entrystyle.css';
 
 import ListingEntry from '../client/ListingEntry';
 
@@ -18,37 +18,40 @@ describe('<ListingEntry />', () => {
     state: 'UT',
     country: 'Lesotho',
   };
+  let wrapper;
+  let mockOpenModal = jest.fn();
 
-  test('Should render component', (done) => {
-    const output = shallow(<ListingEntry
+  beforeEach(() => {
+    wrapper = shallow(<ListingEntry
       listing={listing}
       key="1"
       class="1"
-      openModal={jest.fn()}
+      openModal={mockOpenModal}
     />);
-    expect(output).toMatchSnapshot();
-    done();
+    return wrapper;
   });
 
-  test('Should contain props passed down', (done) => {
-    const output = mount(<ListingEntry
-      listing={listing}
-      key="1"
-      class="1"
-      openModal={jest.fn()}
-    />);
-    expect(Object.keys(output.props()).length).toBe(3);
+  test('Should render component', (done) => {
+    expect(wrapper).toMatchSnapshot();
     done();
   });
 
   test('Bed should be singular when bedCount equals 1', (done) => {
-    const output = mount(<ListingEntry
+    expect(wrapper.find(`.${style.type}`).text()).toContain('Bed');
+    done();
+    listing.bedCount = 2;
+    const bedCountWrapper = shallow(<ListingEntry
       listing={listing}
       key="1"
       class="1"
       openModal={jest.fn()}
-    />);
-    expect(output.find(`.${style.type}`).text()).toContain('Bed');
+      />);
+      expect(bedCountWrapper.find(`.${style.type}`).text()).toContain('Beds');
+  });
+
+  test('Should call openModal when heart is clicked', (done) => {
+    wrapper.find('svg').simulate('click');
+    expect(mockOpenModal.mock.calls.length).toBe(1);
     done();
-  })
+  });
 });
