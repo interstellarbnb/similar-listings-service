@@ -47,48 +47,38 @@ class Listings extends Component {
   }
 
   renderCarousel() {
-    if (this.state.listings.length > 0) {
-      return (
-        <AliceCarousel responsive={{ 0: { items: 3 } }} dotsDisabled>
-          {this.state.listings.map(listing => (
-            <ListingEntry
-              listing={listing}
-              key={listing.id}
-              class={listing.id}
-              openModal={this.openModal}
-            />
-        ))}
-        </AliceCarousel>
-      );
-    }
     return (
-      <div>
-        Loading...
-      </div>
+      <AliceCarousel responsive={{ 0: { items: 3 } }} dotsDisabled>
+        {this.state.listings.map(listing => (
+          <ListingEntry
+            listing={listing}
+            key={listing.id}
+            class={listing.id}
+            openModal={this.openModal}
+          />
+      ))}
+      </AliceCarousel>
     );
   }
 
   renderModal() {
-    if (this.state.listings.length > 0 && this.state.isModalOpen) {
-      return (
-        <ListingDetails
-          listing={this.state.modalListing}
-          renderModal={this.renderModal}
-          closeModal={this.closeModal}
-          isModalOpen
-        />
-      );
-    }
+    return (
+      <ListingDetails
+        listing={this.state.modalListing}
+        closeModal={this.closeModal}
+        isModalOpen
+      />
+    );
   }
 
   render() {
     return (
       <div>
         <div className={style.container}>
-          {this.renderCarousel()}
+          {this.state.listings.length > 0 ? this.renderCarousel() : `Loading...`}
         </div>
         <div id="modal">
-          {this.renderModal()}
+          {this.state.listings.length > 0 && this.state.isModalOpen ? this.renderModal() : ''}
         </div>
       </div>
     );

@@ -1,15 +1,12 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import Listings from '../client/Listings';
 
-
 describe('<Listings />', () => {
   test('should render component', (done) => {
-    const output = shallow(
-      <Listings />
-    );
-    expect(output).toMatchSnapshot();
+    const wrapper = shallow(<Listings />);
+    expect(wrapper).toMatchSnapshot();
     done();
   });
 });

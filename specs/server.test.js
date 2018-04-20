@@ -10,8 +10,8 @@ describe('Server', () => {
       method: 'GET',
     }, (error, response, body) => {
       expect(JSON.parse(body).length).toBe(12);
+      done();
     });
-    done();
   });
 
   test('GET request body should not contain listing id', (done) => {
@@ -23,12 +23,11 @@ describe('Server', () => {
       for (let i = 0; i < results.length; i += 1) {
         expect(results[i].id).not.toBe(1);
       }
+      done();
     });
-    done();
   });
 
   test('Successful POST request should return 201', (done) => {
-    Listing.find({ id: 101 }).remove().exec();
     const postData = {
       id: 101,
       title: 'test',
@@ -52,7 +51,8 @@ describe('Server', () => {
         console.error('error message', error);
       }
       expect(response.statusCode).toBe(201);
+      Listing.find({ id: 101 }).remove().exec().catch(error => console.error(error));
+      done();
     });
-    done();
   });
 });

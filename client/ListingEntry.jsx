@@ -4,7 +4,7 @@ import ReactStars from 'react-stars';
 import style from './entrystyle.css';
 
 const ListingEntry = ({ listing, openModal }) => (
-  <div>
+  <div className={style.item}>
     <div className={style.heart}>
       <svg
         viewBox="0 0 32 32"
