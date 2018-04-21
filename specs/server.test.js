@@ -1,5 +1,5 @@
 const request = require('request');
-const { Listing } = require('../database/db.js');
+// const { Listing } = require('../database/db.js');
 
 const url = 'http://127.0.0.1:3001';
 
@@ -9,7 +9,11 @@ describe('Server', () => {
       url: `${url}/listings/1`,
       method: 'GET',
     }, (error, response, body) => {
+      if (error) {
+        throw new Error(error);
+      }
       expect(JSON.parse(body).length).toBe(12);
+      console.log('======================');
       done();
     });
   });
@@ -27,32 +31,32 @@ describe('Server', () => {
     });
   });
 
-  test('Successful POST request should return 201', (done) => {
-    const postData = {
-      id: 101,
-      title: 'test',
-      price: 200,
-      imageUrl: 'test',
-      reviews: [4, 5, 6],
-      avgRating: 5,
-      type: 'Space Shuttle',
-      bedCount: 3,
-      city: 'San Francisco',
-      state: 'CA',
-      country: 'US',
-    };
-    request({
-      url: `${url}/listings`,
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(postData),
-    }, (error, response) => {
-      if (error) {
-        console.error('error message', error);
-      }
-      expect(response.statusCode).toBe(201);
-      Listing.find({ id: 101 }).remove().exec().catch(error => console.error(error));
-      done();
-    });
-  });
+  // test('Successful POST request should return 201', (done) => {
+  //   const postData = {
+  //     id: 101,
+  //     title: 'test',
+  //     price: 200,
+  //     imageUrl: 'test',
+  //     reviews: [4, 5, 6],
+  //     avgRating: 5,
+  //     type: 'Space Shuttle',
+  //     bedCount: 3,
+  //     city: 'San Francisco',
+  //     state: 'CA',
+  //     country: 'US',
+  //   };
+  //   request({
+  //     url: `${url}/listings`,
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify(postData),
+  //   }, (error, response) => {
+  //     if (error) {
+  //       console.error('error message', error);
+  //     }
+  //     expect(response.statusCode).toBe(201);
+  //     Listing.find({ id: 101 }).remove().exec().catch(error => console.error(error));
+  //     done();
+  //   });
+  // });
 });
