@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ListingEntry /> Should render component 1`] = `
-<div>
+<div
+  className="item"
+>
   <div
     className="heart"
   >

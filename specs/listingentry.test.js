@@ -19,7 +19,7 @@ describe('<ListingEntry />', () => {
     country: 'Lesotho',
   };
   let wrapper;
-  let mockOpenModal = jest.fn();
+  const mockOpenModal = jest.fn();
 
   beforeEach(() => {
     wrapper = shallow(<ListingEntry

@@ -26,7 +26,7 @@ class Listings extends Component {
   }
 
   getSimilarListings() {
-    axios.get(`/listings/${this.state.listingId}`).then((response) => {
+    return axios.get(`/listings/${this.state.listingId}`).then((response) => {
       this.setState({ listings: response.data });
     }).catch((err) => {
       if (err) {
@@ -78,7 +78,7 @@ class Listings extends Component {
           {this.state.listings.length > 0 ? this.renderCarousel() : `Loading...`}
         </div>
         <div id="modal">
-          {this.state.listings.length > 0 && this.state.isModalOpen ? this.renderModal() : ''}
+          {this.state.isModalOpen ? this.renderModal() : ''}
         </div>
       </div>
     );
