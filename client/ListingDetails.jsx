@@ -36,6 +36,12 @@ class ListingDetails extends Component {
     this.setState({ showCreateList: !this.state.showCreateList });
   }
 
+  toggleHeart(index) {
+    const currentList = this.state.lists.slice(0);
+    currentList[index].saved = !currentList[index].saved;
+    this.setState({ lists: currentList });
+  }
+
   renderCreateList() {
     return (
       <CreateList
@@ -43,12 +49,6 @@ class ListingDetails extends Component {
         createNewList={this.createNewList}
       />
     );
-  }
-
-  toggleHeart(index) {
-    const currentList = this.state.lists.slice(0);
-    currentList[index]['saved'] = !currentList[index]['saved'];
-    this.setState({ lists: currentList });
   }
 
 render() {
