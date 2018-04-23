@@ -1,3 +1,42 @@
+button {
+  margin: 5px;
+  cursor: pointer;
+  -webkit-transition: background 0.2s, border-color 0.2s;
+  -moz-transition: background 0.2s, border-color 0.2s;
+  transition: background 0.2s, border-color 0.2s;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  width: auto;
+  font-size: 19px;
+  line-height: 22px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #484848;
+  font-weight: 700;
+  border-width: 2px;
+  border-style: solid;
+  padding-left: 24px;
+  padding-right: 24px;
+  min-width: 77.66563145999496px;
+  background: transparent;
+  border-color: #008489;
+}
+
+input {
+  font-size: 19px;
+  line-height: 24px;
+  color: #484848;
+  font-weight: 300;
+  border-width: 1px;
+  background-color: transparent;
+  border-color: #aaa;
+  padding: 11px;
+  width: 100%;
+}
+
 .container {
     display: flex;
     height: 128px;
@@ -28,6 +67,15 @@
 
   .listitem {
     margin: 20px;
+  }
+
+  .listname {
+    width: 90%;
+    display: inline-block;;
+  }
+  .listheart {
+    width: 10%;
+    display: inline-block;
   }
 
   .line {

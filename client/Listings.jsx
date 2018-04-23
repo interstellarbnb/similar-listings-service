@@ -28,9 +28,9 @@ class Listings extends Component {
   getSimilarListings() {
     return axios.get(`/listings/${this.state.listingId}`).then((response) => {
       this.setState({ listings: response.data });
-    }).catch((err) => {
-      if (err) {
-        throw err;
+    }).catch((error) => {
+      if (error) {
+        throw error.response;
       }
     });
   }
