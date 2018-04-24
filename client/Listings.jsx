@@ -7,6 +7,7 @@ import './alice-carousel.global.css';
 import './style.global.css';
 import ListingEntry from './ListingEntry';
 import ListingDetails from './ListingDetails';
+import Properties from './Properties';
 
 class Listings extends Component {
   constructor() {
@@ -87,6 +88,5 @@ class Listings extends Component {
     );
   }
 }
-
 
 export default Listings;
