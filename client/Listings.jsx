@@ -29,7 +29,7 @@ class Listings extends Component {
   }
 
   getSimilarListings() {
-    return axios.get(`/similarlistings/${this.state.listingId}`).then((response) => {
+    return axios.get(`http://localhost:3001/similarlistings/${this.state.listingId}`).then((response) => {
       this.setState({ listings: response.data });
     }).catch((error) => {
       if (error) {
