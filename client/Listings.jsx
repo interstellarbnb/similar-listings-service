@@ -88,5 +88,4 @@ class Listings extends Component {
   }
 }
 
-
 export default Listings;
