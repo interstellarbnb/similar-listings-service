@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { shape, string, bool, func } from 'prop-types';
-import style from './listingdetails.css';
+import style from '../Listings/listingdetails.css';
 
 class CreateList extends Component {
   constructor(props) {

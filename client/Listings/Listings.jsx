@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import AliceCarousel from 'react-alice-carousel';
 import style from './listingstyle.css';
-import './bootstrap.global.css';
-import './alice-carousel.global.css';
-import './style.global.css';
 import ListingEntry from './ListingEntry';
 import ListingDetails from './ListingDetails';
 

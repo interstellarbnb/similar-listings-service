@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { shape, number, string, array, bool, func } from 'prop-types';
 import { Modal } from 'react-bootstrap';
 import ReactStars from 'react-stars';
-import SavedList from './SavedList';
-import CreateList from './CreateList';
+import SavedList from '../Lists/SavedList';
+import CreateList from '../Lists/CreateList';
 import style from './listingdetails.css';
 
 class ListingDetails extends Component {

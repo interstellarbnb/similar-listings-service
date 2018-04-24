@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { shape, string, bool, number, func } from 'prop-types';
-import style from './listingdetails.css';
+import style from '../Listings/listingdetails.css';
 
 const SavedList = ({ list: { listName, saved }, toggleHeart, index }) => {
   const blankHeart = (
