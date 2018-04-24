@@ -12,7 +12,6 @@ class SavedList extends Component {
   }
 
   render() {
-    console.log('render')
     const { list: { listName, saved }, toggleHeart, index } = this.props;
 
     const blankHeart = (

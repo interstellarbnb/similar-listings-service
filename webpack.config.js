@@ -13,6 +13,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        exclude: /\.global\./,
         use: [
           {
             loader: 'style-loader',
@@ -25,6 +26,15 @@ module.exports = {
               localIdentName: '[local]___[hash:base64:5]',
             },
           },
+        ],
+      },
+      {
+        test: /\.global.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          { loader: 'css-loader' },
         ],
       },
     ],

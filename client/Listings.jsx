@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import AliceCarousel from 'react-alice-carousel';
 import style from './listingstyle.css';
+import './bootstrap.global.css';
+import './alice-carousel.global.css';
+import './style.global.css';
 import ListingEntry from './ListingEntry';
 import ListingDetails from './ListingDetails';
 
@@ -10,7 +13,7 @@ class Listings extends Component {
     super();
     this.state = {
       listings: [],
-      listingId: Math.floor(Math.random() * 101),
+      listingId: window.location.pathname.split('/')[1],
       modalListing: {},
       isModalOpen: false,
     };
@@ -26,7 +29,7 @@ class Listings extends Component {
   }
 
   getSimilarListings() {
-    return axios.get(`/listings/${this.state.listingId}`).then((response) => {
+    return axios.get(`http://localhost:3001/similarlistings/${this.state.listingId}`).then((response) => {
       this.setState({ listings: response.data });
     }).catch((error) => {
       if (error) {
@@ -75,7 +78,7 @@ class Listings extends Component {
     return (
       <div>
         <div className={style.container}>
-          {this.state.listings.length > 0 ? this.renderCarousel() : `Loading...`}
+          {this.state.listings.length > 0 ? this.renderCarousel() : 'Loading...'}
         </div>
         <div id="modal">
           {this.state.isModalOpen ? this.renderModal() : ''}
