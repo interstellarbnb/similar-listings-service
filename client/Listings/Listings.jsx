@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import AliceCarousel from 'react-alice-carousel';
 import style from './listingstyle.css';
+import { url } from '../config';
 import ListingEntry from './ListingEntry';
 import ListingDetails from './ListingDetails';
 
@@ -26,12 +27,10 @@ class Listings extends Component {
   }
 
   getSimilarListings() {
-    return axios.get(`http://localhost:3001/similarlistings/${this.state.listingId}`).then((response) => {
+    return axios.get(`${url.similarListings}/similarlistings/${this.state.listingId}`).then((response) => {
       this.setState({ listings: response.data });
     }).catch((error) => {
-      if (error) {
-        throw error.response;
-      }
+      throw error.response;
     });
   }
 
