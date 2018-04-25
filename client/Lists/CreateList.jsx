@@ -7,7 +7,7 @@ class CreateList extends Component {
     super(props);
     this.state = {
       newListName: '',
-    }
+    };
 
     this.getNewListName = this.getNewListName.bind(this);
   }
@@ -21,8 +21,12 @@ class CreateList extends Component {
     return (
       <div>
         <input id="listname" type="text" onChange={event => this.getNewListName(event)} />
-        <button onClick={handleCreateListClick}>Cancel</button>
-        <button onClick={() => createNewList(this.state.newListName)}>Create</button>
+        <button className="cancel" onClick={handleCreateListClick}>
+          Cancel
+        </button>
+        <button className="create" onClick={() => createNewList(this.state.newListName)}>
+          Create
+        </button>
       </div>
     );
   }

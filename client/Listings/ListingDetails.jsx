@@ -66,68 +66,80 @@ render() {
       },
     } = this.props;
 
-  return (
-    <div>
-      <Modal
-        show={isModalOpen}
-        onHide={closeModal}
-      >
-        <div>
-          <svg
-            viewBox="0 0 24 24"
-            role="img"
-            aria-label="Close"
-            focusable="false"
-            style={{
-              height: '16px',
-              width: '16px',
-              display: 'block',
-              fill: 'rgb(118, 118, 118)',
-            }}
-            onClick={closeModal}
-          >
-            <path d="m23.25 24c-.19 0-.38-.07-.53-.22l-10.72-10.72-10.72 10.72c-.29.29-.77.29-1.06 0s-.29-.77 0-1.06l10.72-10.72-10.72-10.72c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0l10.72 10.72 10.72-10.72c.29-.29.77-.29 1.06 0s .29.77 0 1.06l-10.72 10.72 10.72 10.72c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22" fillRule="evenodd" />
-          </svg>
-        </div>
-        <div className={style.header}>
-          <h1>Save To List</h1>
-        </div>
-        <div className={style.list}>
-          <div className={style.listitem}>
-            <span>
-              {this.state.showCreateList ? this.renderCreateList() : (<span onClick={this.handleCreateListClick}>Create New List</span>)}
-            </span>
+    return (
+      <div>
+        <Modal
+          show={isModalOpen}
+          onHide={closeModal}
+        >
+          <div>
+            <svg
+              className="close"
+              viewBox="0 0 24 24"
+              role="img"
+              aria-label="Close"
+              focusable="false"
+              style={{
+                height: '16px',
+                width: '16px',
+                display: 'block',
+                fill: 'rgb(118, 118, 118)',
+              }}
+              onClick={closeModal}
+            >
+              <path d="m23.25 24c-.19 0-.38-.07-.53-.22l-10.72-10.72-10.72 10.72c-.29.29-.77.29-1.06 0s-.29-.77 0-1.06l10.72-10.72-10.72-10.72c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0l10.72 10.72 10.72-10.72c.29-.29.77-.29 1.06 0s .29.77 0 1.06l-10.72 10.72 10.72 10.72c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22" fillRule="evenodd" />
+            </svg>
           </div>
-          {this.state.lists.map((listing, index) => <SavedList list={listing} toggleHeart={this.toggleHeart} index={index} key={index} />)}
-        </div>
-        <div className={style.container}>
-          <div className={style.item}>
-            <img src={imageUrl} width="104" height="80" alt="" />
+          <div className={style.header}>
+            <h1>Save To List</h1>
           </div>
-          <div className={style.item}>
-            <div className={style.title}>
-              {title}
-            </div>
-            <div className={style.location}>
-              {city}, {state}, {country}
-            </div>
-            <div className={style.review}>
-              <ReactStars
-                count={5}
-                size={18}
-                value={avgRating}
-                color1="A0A0A0"
-                color2="#008489"
-                edit={false}
-              />
-              <span className={style.review}>
-                {reviews.length} Reviews
+          <div className={style.list}>
+            <div className={style.listitem}>
+              <span>
+                {this.state.showCreateList ?
+                   this.renderCreateList() :
+                   (<span
+                     onClick={this.handleCreateListClick}>
+                     Create New List
+                   </span>)}
               </span>
             </div>
+            {this.state.lists.map((list, index) => (
+              <SavedList
+                list={list}
+                toggleHeart={this.toggleHeart}
+                index={index}
+                key={index}
+              />))}
           </div>
-        </div>
-      </Modal>
-    </div>
+          <div className={style.container}>
+            <div className={style.item}>
+              <img src={imageUrl} width="104" height="80" alt="" />
+            </div>
+            <div className={style.item}>
+              <div className={style.title}>
+                {title}
+              </div>
+              <div className={style.location}>
+                {city}, {state}, {country}
+              </div>
+              <div className={style.review}>
+                <ReactStars
+                  count={5}
+                  size={18}
+                  value={avgRating}
+                  color1="A0A0A0"
+                  color2="#008489"
+                  edit={false}
+                />
+                <span className={style.review}>
+                  {reviews.length} Reviews
+                </span>
+              </div>
+            </div>
+          </div>
+        </Modal>
+      </div>
     );
   }
 }

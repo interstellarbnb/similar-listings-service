@@ -6,21 +6,20 @@ const url = 'http://127.0.0.1:3001';
 describe('Server', () => {
   test('GET request should return 12 listings', (done) => {
     request({
-      url: `${url}/listings/1`,
+      url: `${url}/similarlistings/1`,
       method: 'GET',
     }, (error, response, body) => {
       if (error) {
         throw new Error(error);
       }
       expect(JSON.parse(body).length).toBe(12);
-      console.log('======================');
       done();
     });
   });
 
   test('GET request body should not contain listing id', (done) => {
     request({
-      url: `${url}/listings/1`,
+      url: `${url}/similarlistings/1`,
       method: 'GET',
     }, (error, response, body) => {
       const results = JSON.parse(body);

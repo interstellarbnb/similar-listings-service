@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import style from './entrystyle.css';
 
-import ListingDetails from '../client/ListingDetails';
+import ListingDetails from '../client/Listings/ListingDetails';
 
 describe('<ListingDetails />', () => {
   const listing = {
@@ -19,6 +19,19 @@ describe('<ListingDetails />', () => {
     country: 'USA',
   };
 
+  test('Should create new list when function is called', (done) => {
+    const wrapper = shallow(<ListingDetails
+      listing={listing}
+      closeModal={jest.fn()}
+      isModalOpen
+    />);
+
+    const oldList = wrapper.instance().state.lists;
+    wrapper.instance().createNewList('New List');
+    expect(wrapper.instance().state.lists.length).toBeGreaterThan(oldList.length);
+    done();
+  })
+
   test('Should call closeModal when X is clicked', (done) => {
     const mockCloseModal = jest.fn();
     const wrapper = mount(<ListingDetails
@@ -27,7 +40,7 @@ describe('<ListingDetails />', () => {
       isModalOpen
     />);
 
-    wrapper.find('svg').simulate('click');
+    wrapper.find('svg.close').simulate('click');
     expect(mockCloseModal.mock.calls.length).toBe(1);
     done();
   });
