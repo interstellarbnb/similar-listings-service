@@ -18,7 +18,8 @@
   box-sizing: border-box;
   position: relative;
   width: 100%;
-  padding: 10px;
+  max-width: 1200px;
+  padding: 10px 50px 10px 10px;
   margin: auto; }
 
 .alice-carousel__wrapper {
