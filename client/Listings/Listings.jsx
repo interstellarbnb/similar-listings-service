@@ -74,6 +74,7 @@ class Listings extends Component {
   render() {
     return (
       <div>
+        <div className={style.title}>Similar Listings</div>
         <div className={style.container}>
           {this.state.listings.length > 0 ? this.renderCarousel() : 'Loading...'}
         </div>
