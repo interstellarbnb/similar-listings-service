@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import style from '../client/entrystyle.css';
 
-import ListingEntry from '../client/ListingEntry';
+import ListingEntry from '../client/Listings/ListingEntry';
 
 describe('<ListingEntry />', () => {
   const listing = {

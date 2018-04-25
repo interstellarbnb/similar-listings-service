@@ -3,7 +3,7 @@ import { shallow, mount, render } from 'enzyme';
 import axiosMockAdapter from 'axios-mock-adapter';
 import axios from 'axios';
 import style from './listingstyle.css';
-import Listings from '../client/Listings';
+import Listings from '../client/Listings/Listings';
 
 describe('<Listings />', () => {
   let wrapper;
