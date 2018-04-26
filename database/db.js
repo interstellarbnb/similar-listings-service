@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const random = require('mongoose-random');
 
-mongoose.connect('mongodb://localhost/interstellarbnb');
+mongoose.connect('mongodb://database/interstellarbnb')
+  .catch(error => console.error('connection error', error.message, error.stack));
 
 const listingSchema = mongoose.Schema({
   id: { type: Number, unique: true },
@@ -20,4 +21,12 @@ const listingSchema = mongoose.Schema({
 listingSchema.plugin(random, { path: 'r' });
 const Listing = mongoose.model('Listing', listingSchema);
 
+const disconnect = () => {
+  mongoose.connection.close(() => {
+    console.log('Mongoose connection closed');
+    process.exit(0);
+  });
+};
+
 module.exports.Listing = Listing;
+module.exports.disconnect = disconnect;
