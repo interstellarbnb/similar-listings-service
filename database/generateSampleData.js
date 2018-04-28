@@ -54,5 +54,6 @@ for (let i = 1; i < 101; i += 1) {
     if (err) {
       console.error(err);
     }
+    db.disconnect();
   });
 }
