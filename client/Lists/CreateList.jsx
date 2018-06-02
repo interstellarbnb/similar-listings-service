@@ -20,11 +20,11 @@ class CreateList extends Component {
     const { handleCreateListClick, createNewList } = this.props;
     return (
       <div>
-        <input id="listname" type="text" onChange={event => this.getNewListName(event)} />
-        <button className="cancel" onClick={handleCreateListClick}>
+        <input id="listname" className={style.inputcreate} type="text" onChange={event => this.getNewListName(event)} />
+        <button className={style.buttoncancel} onClick={handleCreateListClick}>
           Cancel
         </button>
-        <button className="create" onClick={() => createNewList(this.state.newListName)}>
+        <button className={style.buttoncreate} onClick={() => createNewList(this.state.newListName)}>
           Create
         </button>
       </div>

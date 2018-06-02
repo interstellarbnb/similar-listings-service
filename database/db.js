@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const random = require('mongoose-random');
 
-mongoose.connect('mongodb://172.17.0.2/interstellarbnb')
+mongoose.connect('mongodb://localhost/interstellarbnb')
   .catch(error => console.error('connection error', error.message, error.stack));
 
 const listingSchema = mongoose.Schema({

@@ -55,12 +55,25 @@ describe('<Listings />', () => {
     done();
   });
 
-  test('should call renderCarousel method', (done) => {
-    wrapper.instance().renderCarousel = jest.fn();
+  test('should call renderCarousel method when state is updated', (done) => {
+    // Mock function inside component to spy on
+    wrapper.instance().renderCarousel = jest.fn()
+    // State change to trigger re-render
     wrapper.instance().setState({ listings: [listing, listing, listing] });
     expect(wrapper.instance().renderCarousel).toHaveBeenCalled();
     done();
   });
+
+  // test('should return the same number of elements as the array', (done) => {
+  //   // Full DOM render
+  //   let mountWrapper = mount(<Listings />);
+  //   // State change to trigger re-render
+  //   mountWrapper.instance().setState({ listings: [listing, listing, listing] });
+  //   // Updates the wrapper based on new state
+  //   mountWrapper.update();
+  //   expect(mountWrapper.find('li').length).toBe(0);
+  //   done();
+  // })
 
   test('should update listings upon GET request', (done) => {
     wrapper.instance().setState({ listingId: 2 });

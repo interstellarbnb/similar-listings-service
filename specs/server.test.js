@@ -1,7 +1,7 @@
 const request = require('request');
 // const { Listing } = require('../database/db.js');
 
-const url = 'http://127.0.0.1:3001';
+const url = 'http://ec2-18-218-192-170.us-east-2.compute.amazonaws.com';
 
 describe('Server', () => {
   test('GET request should return 12 listings', (done) => {
