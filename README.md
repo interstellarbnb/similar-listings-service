@@ -4,7 +4,7 @@
 
 ## Description
 
-Reservations application for booking travel accommodations
+Reservations application for booking travel accommodations.
 
 ## Installation
 
@@ -29,7 +29,7 @@ npm run build
 npm start
 ```
 
-5. Open browser at `127.0.0.1:3001` to see the application rendered.
+5. Open browser at `127.0.0.1:3001/<ID_NUMBER>` to see the application rendered.
 
 
 ## Running Tests
